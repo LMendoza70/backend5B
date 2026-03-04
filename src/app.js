@@ -16,7 +16,7 @@ app.use(express.json())
 app.use('/api/grupos',grupoRoutes)
 
 app.get('/',(req,res)=>{
-    res.send("Esta es mi primer API... 5B ")
+    res.send("Esta es mi primer API... 5B ya publicada en vercel ")
 })
 
 app.listen(port,()=>{
