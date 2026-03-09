@@ -1,6 +1,7 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import grupoRoutes from './routes/grupos.routes.js'
+import authRoutes from './routes/auth.routes.js'
 
 //creamos la instancia de nuestro servidor 
 const app=express();
@@ -14,6 +15,7 @@ app.use(express.json())
 //agregamos las rutas con las que voy a trabajar 
 //rutas de grupos 
 app.use('/api/grupos',grupoRoutes)
+app.use('/api/auth',authRoutes)
 
 app.get('/',(req,res)=>{
     res.send("Esta es mi primer API... 5B ya publicada en vercel ")

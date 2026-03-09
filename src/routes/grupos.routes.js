@@ -1,10 +1,13 @@
 import * as ctrl from '../controllers/grupo.controller.js'
+import verificador from '../midleware/auth.midleware.js'
 import {Router} from 'express'
 
 const router = Router()
-
-router.get('/',ctrl.getAllGrupos)
+//rutas publicas 
+router.get('/', verificador, ctrl.getAllGrupos)
 router.get('/:id',ctrl.getGrupoById)
-router.post('/',ctrl.createGrupo)
+
+//ruta protegida
+router.post('/', verificador, ctrl.createGrupo)
 
 export default router
