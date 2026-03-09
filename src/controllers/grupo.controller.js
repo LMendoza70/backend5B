@@ -23,7 +23,7 @@ export const getGrupoById = async (req,res)=>{
 export const createGrupo = async (req,res)=>{
     try {
         if(!req.body.nombre_grupo)
-            res.status(400).json({message:'No fue agregado el nombre'})
+            return res.status(400).json({message:'No fue agregado el nombre'})
         const nuevo= await grupoModelo.createGrupo(req.body)
         res.status(201).json(nuevo)
     } catch (error) {
